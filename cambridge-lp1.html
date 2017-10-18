@@ -1,0 +1,48 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../paper-radio-group/paper-radio-group.html">
+<link rel="import" href="../paper-radio-button/paper-radio-button.html">
+<link rel="import" href="../paper-stepper/paper-stepper.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+
+<dom-module id="cambridge-lp1">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+    <paper-input label="Corporate Name"></paper-input>
+    <paper-input label="Business Registration / Corporate Number"></paper-input>
+    <paper-input label="Street Address" error-message="Please do not use a PO Box" validate></paper-input>
+    <paper-input label="Country"></paper-input>
+    <paper-input label="State"></paper-input>
+    <paper-input label="Corporate Name"></paper-input>
+  </template>
+
+  <script>
+    /**
+     * `Cambridge-LP1`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class CambridgeLP1 extends Polymer.Element {
+      static get is() { return 'cambridge-lp1'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'Cambridge-LP1'
+          }
+        };
+      }
+    }
+
+   customElements.define(CambridgeLP1.is, CambridgeLP1);
+  </script>
+</dom-module>
