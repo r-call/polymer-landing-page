@@ -5,16 +5,45 @@
 <link rel="import" href="../paper-radio-button/paper-radio-button.html">
 <link rel="import" href="../paper-stepper/paper-stepper.html">
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../paper-input/paper-input-container.html">
+<link rel="import" href="../iron-input/iron-input.html">
+
+<link rel="import" href="/bower_components/shadycss/apply-shim.html">
 
 <dom-module id="cambridge-lp1">
   <template>
     <style>
-      :host {
-        display: block;
+    :host {
+      display: block;
+    }
+
+/*    :host paper-input-container {
+      @apply --paper-input-container-shared-input-style;
+      }*/
+
+      input {
+        all: inherit;
       }
     </style>
     <h2>Hello [[prop1]]!</h2>
-    <paper-input label="Corporate Name"></paper-input>
+
+    <paper-input-container>
+      <iron-input slot="input">
+        <input>
+      </iron-input>
+      <label slot="label">Text below</label>
+    </paper-input-container>
+
+    <paper-input-container>
+      <div slot="prefix">$</div>
+      <label slot="label">Total</label>
+      <iron-input slot="input">
+        <input>
+      </iron-input>
+      <!-- // In Polymer 1.0, you would use `<input is="iron-input" slot="input">` instead of the above. -->
+      <paper-icon-button slot="suffix" icon="clear"></paper-icon-button>
+    </paper-input-container>
+
     <paper-input label="Business Registration / Corporate Number"></paper-input>
     <paper-input label="Street Address" error-message="Please do not use a PO Box" validate></paper-input>
     <paper-input label="Country"></paper-input>
@@ -31,7 +60,7 @@
      * @polymer
      * @demo demo/index.html
      */
-    class CambridgeLP1 extends Polymer.Element {
+     class CambridgeLP1 extends Polymer.Element {
       static get is() { return 'cambridge-lp1'; }
       static get properties() {
         return {
@@ -43,6 +72,6 @@
       }
     }
 
-   customElements.define(CambridgeLP1.is, CambridgeLP1);
+    customElements.define(CambridgeLP1.is, CambridgeLP1);
   </script>
 </dom-module>

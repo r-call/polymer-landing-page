@@ -1,6 +1,6 @@
 {
-  "name": "Cambridge-LP1",
-  "main": "Cambridge-LP1.html",
+  "name": "cambridge-lp1",
+  "main": "cambridge-lp1.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0"
   },
